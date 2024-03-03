@@ -1,0 +1,22 @@
+body {
+    background-image: url('../public/background.jpg');
+    background-size: auto;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  .animating {
+    opacity: 0;
+    animation: infinite 1s infinite alternate;
+}
+
+@keyframes infinite {
+  0%, 100% {
+      opacity: 0.5;
+  }
+  50% {
+      opacity: 0;
+  }
+}

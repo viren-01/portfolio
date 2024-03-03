@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.contact {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
+    height: 100vh;
+    margin-top: 100px;
+}
+
+.contact h1 {
+    font-size: 80px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.icons ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.icons li {
+    margin: 0 10px 50px 0;
+}
+
+.contact-circle-container {
+    border-radius: 50%;
+    background-color: #ddd;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.contact-circle-container img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.contact-circle-container:hover {
+    background-color: #ccc; /* Change background color on hover */
+    transform: scale(1.2); /* Apply zoom effect on hover */
+  }
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px; /* Limit the maximum width of the form */
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.form-email {
+    width: 100px; /* Adjust width as needed */
+    margin-right: 10px; /* Add space between span and input */
+    font-size: 25px;
+    color: darkcyan;
+    margin-right: 50px;
+}
+
+.input-box {
+    display: flex;
+    align-items: center;
+}
+
+.input-text {
+    height: 15px;
+    width: 100%;
+    padding: 8px; /* Add padding for better appearance */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 30px;
+}
+
+.input-text-body {
+    height: 100%;
+    width: 100%;
+    padding: 8px; /* Add padding for better appearance */
+    font-size: 16px; /* Adjust font size as needed */
+    margin-bottom: 50px;
+}
+
+.btn-send {
+    height: 40px;
+    width: 150px;
+    background: transparent;
+    border-radius: 10px;
+    color: white;
+    border: 1px solid white;
+}
+
+.btn-send:hover{
+    border: 1px solid darkcyan;
+}

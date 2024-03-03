@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.home {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: top;
+    height: 100vh;
+    padding-left: 20%;
+    margin-top: 200px
+}
+
+.home p {
+    left: 200px;
+    color: darkcyan;
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 50px;
+}
+.home h2 {
+    color: white;
+    font-size: 80px;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+
+.home h2:nth-child(3) {
+    color: darkcyan;
+}
+
+
+.home p:nth-of-type(2) {
+    color: grey;
+    margin-bottom: 2px;
+    margin-top: 10px;
+}
+
+.home p:nth-of-type(n+3) {
+    color: grey;
+    margin-top: 5px;
+}
+
+.org-name {
+    color: darkcyan
+}
+
+.btn-git {
+    margin-top: 50px;
+    height: 50px;
+    width: 150px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.btn-git:hover {
+    cursor: pointer;
+    border: 1px solid darkcyan;
+}
