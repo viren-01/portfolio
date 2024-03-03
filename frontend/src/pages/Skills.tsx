@@ -20,7 +20,7 @@ export default function Skills() {
                 setIsAnimating(true);
                 timeout = setTimeout(() => {
                     setIsAnimating(false);
-                    navigate('/');
+                    navigate('//');
                 }, 500);
             }
     

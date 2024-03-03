@@ -35,7 +35,7 @@ export default function Home() {
             <p><span className='org-name'>HINDUSTAN TIMES</span> and <span className='org-name'> CARDEKHO </span>.</p>
             <div className='btn-div'>
                 <button className='btn-git' onClick={() => navigate('/contact')}>{"GET IN TOUCH"}</button>
-                <button className='btn-git' onClick={() => window.open('/resume.pdf')}>
+                <button className='btn-git' onClick={() => window.open('./resume.pdf')}>
                     <i className="fas fa-download" style={{ marginRight: '6px' }} />
                     {"RESUME"}
                 </button>

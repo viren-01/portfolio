@@ -7,7 +7,7 @@ import Contact from '../pages/Contact'
 
 export default function AppRouter() {
     return (
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
             <Routes>
                 <Route path='/' Component={() => <NavLayout component={Home}/>}/>
                 {/* <Route path='/about' Component={() => <NavLayout component={About}/>}/> */}

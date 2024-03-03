@@ -8,13 +8,9 @@ export default function Navbar() {
     const navigate = useNavigate()
 
     const handleRedirect = (path: string) => {
-        console.log("PAPAPA", path);
-        
         let redirectTo = path.split(' ')[0]
-        if(redirectTo === 'home') redirectTo = ''
-        console.log("FINALALA", redirectTo);
-        
-        navigate("/" +redirectTo, {replace: true})
+        if(redirectTo === 'home') redirectTo = '/'
+        navigate("/" +redirectTo)
     }
 
     useEffect(() => {
@@ -42,17 +38,17 @@ export default function Navbar() {
                 }
                 <li className="navbar-li" key={'linkedin'}>
                     <div className="circle-container">
-                        <img src='/linked-In.png' alt="LinkedIn Logo" className="profile-img" onClick={() => window.open('https://www.linkedin.com/in/virendra-vishwakarma-401b17159/')} />
+                        <img src='./linked-In.png' alt="LinkedIn Logo" className="profile-img" onClick={() => window.open('https://www.linkedin.com/in/virendra-vishwakarma-401b17159/')} />
                     </div>
                 </li>
                 <li className="navbar-li" key={'github'}>
                     <div className="circle-container">
-                        <img src='/github.png' alt="github Logo" className="profile-img" onClick={() => window.open('https://github.com/viren-01')} />
+                        <img src='./github.png' alt="github Logo" className="profile-img" onClick={() => window.open('https://github.com/viren-01')} />
                     </div>
                 </li>
                 <li className="navbar-li" key={'twitter'}>
                     <div className="circle-container">
-                        <img src='/twitter.png' alt="twitter Logo" className="profile-img" onClick={() => window.open('https://twitter.com/viren_99')}/>
+                        <img src='./twitter.png' alt="twitter Logo" className="profile-img" onClick={() => window.open('https://twitter.com/viren_99')}/>
                     </div>
                 </li>
             </ul>
