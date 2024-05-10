@@ -10,7 +10,7 @@ server.listen(port, () => {
     if (process.env.ENV === 'PROD') {
         //self ping for render
         setInterval(() => {
-            let url = `${process.env.HOST}:${port}/health`
+            let url = `${process.env.HOST}/health`
             axios.get(url).then((res) => {
                 console.log("Self Request Made...")
             })
