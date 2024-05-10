@@ -1,32 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import '../contact.css'
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import * as fs from 'fs'
+import CommonService from '../services/CommonService';
 
 export default function Contact() {
     const [showEmailBox, setShowEmailBox] = useState<boolean>(false)
-    const [isAnimating, setIsAnimating] = useState(false);
     const [inputFields, setInputFields] = useState<any>({})
-
-    const navigate = useNavigate()
 
     const handleEmailBox = () => {
         setShowEmailBox(true)
     }
-
-    const handleScroll = (e: any) => {
-        e.preventDefault();
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY === 0) {
-            setIsAnimating(true);
-            setTimeout(() => {
-                setIsAnimating(false);
-                navigate('/skills');
-            }, 500);
-        }
-    };
 
     const handleChange = (e: any, name: string) => {
         setInputFields((prev: any) => ({ ...prev, [name]: e.target.value }))
@@ -36,28 +19,29 @@ export default function Contact() {
         let email = inputFields.email
         let message = inputFields.body
 
-
         let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
         if (!emailRegex.test(email)) return toast.error("Please enter a valid email")
-        if (!message || (message.length <50)) return toast.error("Message should be of atleast 50 characters")
+        if (!message || (message.length < 50)) return toast.error("Message should be of atleast 50 characters")
 
-        const text = new Date() + "\n" + email + '\n' + message + '\n'
-        toast.success("Thanks for writing to me, will get back to you soon.")
-        setShowEmailBox(false)
+        CommonService.sendEmail({ email, message }).then((res) => {
+            if (res.status === 200) {
+                if (res?.data?.status === 200) {
+                    toast.success("Thanks for writing to me, will get back to you soon.")
+                    setShowEmailBox(false)
+                    setInputFields({})
+                } else {
+                    let message = res?.data?.message
+                    toast.success(message)
+                }
+            } else {
+                toast.success("Error in sending mail, please recheck your email")
+            }
+        })
     }
 
 
-    useEffect(() => {
-        window.scrollTo(0, 5)
-        window.addEventListener('scroll', handleScroll)
-        return (() => {
-            window.removeEventListener('scroll', handleScroll)
-            setShowEmailBox(false)
-        })
-    }, [])
-
     return (
-        <div className={`contact ${isAnimating ? 'animating' : ''}`}>
+        <div className={`contact`}>
             <h1> {"CONTACT"} </h1>
             <div className="icons">
                 <ul>

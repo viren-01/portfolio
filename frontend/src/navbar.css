@@ -6,6 +6,7 @@
     display: flex;
     top: 0;
     right: 40px;
+    flex-wrap: wrap;
 }
 
 .navbar-li {
@@ -53,4 +54,12 @@
 
 .profile-img:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-ul {
+        margin-right: 0;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
 }
