@@ -9,7 +9,7 @@ export default function Navbar() {
 
     const handleRedirect = (path: string) => {
         let redirectTo = path.split(' ')[0]
-        if(redirectTo === 'home') redirectTo = '/'
+        if(redirectTo === 'home') redirectTo = ''
         navigate("/" +redirectTo)
     }
 
